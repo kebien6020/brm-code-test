@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { withStyles } from '@material-ui/styles'
 import Button from '@material-ui/core/Button'
@@ -7,6 +8,8 @@ import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 
 import ResponsiveContainer from '../components/ResponsiveContainer'
+
+const AdapterLink = React.forwardRef((props, ref) => <Link innerRef={ref} {...props} />)
 
 class Home extends React.Component {
   render() {
@@ -23,7 +26,13 @@ class Home extends React.Component {
               </Typography>
             </Grid>
             <Grid item xs={6} className={classes.buttonContainer}>
-              <Button variant='contained' color='primary' className={classes.button}>
+              <Button
+                component={AdapterLink}
+                to='/supplier'
+                variant='contained'
+                color='primary'
+                className={classes.button}
+              >
                 Supplier
               </Button>
             </Grid>
