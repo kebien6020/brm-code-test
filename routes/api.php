@@ -14,3 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::apiResource('products', 'ProductController');
+Route::apiResource('productbundles', 'ProductBundleController');
