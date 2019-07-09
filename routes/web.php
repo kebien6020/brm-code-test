@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/{uri?}', function () {
     return view('main');
-});
+})->where('uri', '(.*)');
