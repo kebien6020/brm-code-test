@@ -10,6 +10,8 @@
 
   <body>
     <div id="root"></div>
+
+    <script src="{{ mix('/js/app.js') }}" charset="utf-8"></script>
   </body>
 
 </html>
