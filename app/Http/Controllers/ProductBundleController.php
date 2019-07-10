@@ -43,8 +43,9 @@ class ProductBundleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(ProductBundle $bund)
+    public function show($id)
     {
+      $bund = ProductBundle::find($id);
       return new ProductBundleResource($bund);
     }
 
@@ -55,8 +56,9 @@ class ProductBundleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductBundle $bund)
+    public function update(Request $request, $id)
     {
+      $bund = ProductBundle::find($id);
       $bund->update($request->only([
         'product_id',
         'quantity',
@@ -74,8 +76,9 @@ class ProductBundleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductBundle $bund)
+    public function destroy($id)
     {
+      $bund = ProductBundle::find($id);
       $bund->delete();
 
       return response()->json(null, 204);

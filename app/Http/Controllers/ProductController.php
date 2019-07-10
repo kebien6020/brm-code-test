@@ -40,8 +40,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $prod)
+    public function show($id)
     {
+      $prod = Product::find($id);
       return new ProductResource($prod);
     }
 
@@ -52,8 +53,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $prod)
+    public function update(Request $request, $id)
     {
+      $prod = Product::find($id);
       $prod->update($request->only(['name', 'description']));
 
       return new ProductResource($prod);
@@ -65,8 +67,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $prod)
+    public function destroy($id)
     {
+      $prod = Product::find($id);
       $prod->delete();
 
       return response()->json(null, 204);
