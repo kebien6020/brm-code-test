@@ -34229,6 +34229,93 @@ exports.default = _default;
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/ErrorOutlined.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/ErrorOutlined.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+}), 'ErrorOutlined');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Info.js":
+/*!*************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Info.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+}), 'Info');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Warning.js":
+/*!****************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Warning.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+}), 'Warning');
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/utils/createSvgIcon.js":
 /*!****************************************************************!*\
   !*** ./node_modules/@material-ui/icons/utils/createSvgIcon.js ***!
@@ -99687,6 +99774,106 @@ var AdapterLink = react__WEBPACK_IMPORTED_MODULE_0___default.a.forwardRef(functi
 
 /***/ }),
 
+/***/ "./resources/js/components/Alert.jsx":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Alert.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/colors */ "./node_modules/@material-ui/core/esm/colors/index.js");
+/* harmony import */ var _material_ui_icons_ErrorOutlined__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/ErrorOutlined */ "./node_modules/@material-ui/icons/ErrorOutlined.js");
+/* harmony import */ var _material_ui_icons_ErrorOutlined__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ErrorOutlined__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_icons_Warning__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Warning */ "./node_modules/@material-ui/icons/Warning.js");
+/* harmony import */ var _material_ui_icons_Warning__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Warning__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_Info__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/Info */ "./node_modules/@material-ui/icons/Info.js");
+/* harmony import */ var _material_ui_icons_Info__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Info__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+
+
+function getClassName(props) {
+  var classNames = [props.classes.alert];
+
+  switch (props.type) {
+    case 'error':
+      classNames.push(props.classes.error);
+      break;
+
+    case 'warning':
+      classNames.push(props.classes.warning);
+      break;
+
+    case 'success':
+      classNames.push(props.classes.success);
+      break;
+  }
+
+  return classNames.join(' ');
+}
+
+var Alert = function Alert(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+    className: getClassName(props)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["CardContent"], {
+    className: props.classes.cardContent
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Typography"], {
+    className: props.classes.typography
+  }, props.type === 'error' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_ErrorOutlined__WEBPACK_IMPORTED_MODULE_4___default.a, null), props.type === 'warning' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Warning__WEBPACK_IMPORTED_MODULE_5___default.a, null), props.type === 'success' && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Info__WEBPACK_IMPORTED_MODULE_6___default.a, null), props.message)));
+};
+
+var styles = function styles() {
+  return {
+    alert: {
+      padding: '8px',
+      margin: '0.5rem 0 1rem',
+      '& p': {
+        fontSize: '1rem'
+      }
+    },
+    cardContent: {
+      padding: '0 !important'
+    },
+    typography: {
+      // Vertical center
+      display: 'flex',
+      alignItems: 'center'
+    },
+    error: {
+      backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_3__["red"][100],
+      '& p': {
+        color: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_3__["red"][900]
+      }
+    },
+    warning: {
+      backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_3__["yellow"][100],
+      '& p': {
+        color: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_3__["yellow"][900]
+      }
+    },
+    success: {
+      backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_3__["green"][100],
+      '& p': {
+        color: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_3__["green"][900]
+      }
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(Alert));
+
+/***/ }),
+
 /***/ "./resources/js/components/PriceField.jsx":
 /*!************************************************!*\
   !*** ./resources/js/components/PriceField.jsx ***!
@@ -99724,7 +99911,8 @@ function NumberFormatCustom(props) {
       if (!onChange) return;
       onChange({
         target: {
-          value: values.value
+          value: Math.abs(values.value),
+          name: props.name
         }
       });
     },
@@ -99985,8 +100173,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons/ArrowBack */ "./node_modules/@material-ui/icons/ArrowBack.js");
 /* harmony import */ var _material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_19__);
 /* harmony import */ var _components_AdapterLink__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/AdapterLink */ "./resources/js/components/AdapterLink.jsx");
-/* harmony import */ var _components_PriceField__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/PriceField */ "./resources/js/components/PriceField.jsx");
-/* harmony import */ var _components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../components/ResponsiveContainer */ "./resources/js/components/ResponsiveContainer.jsx");
+/* harmony import */ var _components_Alert__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/Alert */ "./resources/js/components/Alert.jsx");
+/* harmony import */ var _components_PriceField__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../components/PriceField */ "./resources/js/components/PriceField.jsx");
+/* harmony import */ var _components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../components/ResponsiveContainer */ "./resources/js/components/ResponsiveContainer.jsx");
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -100036,6 +100225,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Supplier =
 /*#__PURE__*/
 function (_React$Component) {
@@ -100050,9 +100240,13 @@ function (_React$Component) {
     _this.state = {
       products: null,
       productId: -1,
-      quantity: '0',
+      quantity: '1',
       lotNumber: '',
-      expirationDate: moment__WEBPACK_IMPORTED_MODULE_4___default()().startOf('day') // Bind this for non-react methods
+      expirationDate: moment__WEBPACK_IMPORTED_MODULE_4___default()().startOf('day'),
+      unitPrice: '',
+      error: false,
+      validationError: false,
+      success: false // Bind this for non-react methods
 
     };
     ['handleChange', 'handleDateChange', 'handleSubmit', 'renderProductSelect', 'renderQuantityField', 'renderLotField', 'renderExpirationDatePicker', 'renderPriceField'].forEach(function (func) {
@@ -100101,6 +100295,11 @@ function (_React$Component) {
   }, {
     key: "handleChange",
     value: function handleChange(event) {
+      this.setState({
+        error: false,
+        success: false,
+        validationError: false
+      });
       var _event$target = event.target,
           name = _event$target.name,
           value = _event$target.value;
@@ -100109,6 +100308,11 @@ function (_React$Component) {
   }, {
     key: "handleDateChange",
     value: function handleDateChange(date) {
+      this.setState({
+        error: false,
+        success: false,
+        validationError: false
+      });
       this.setState({
         expirationDate: date
       });
@@ -100119,14 +100323,59 @@ function (_React$Component) {
       var _handleSubmit = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var state;
+        var state, body, invalid, res;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                state = this.state; // TODO: handle submit
+                state = this.state;
+                body = {
+                  product_id: String(state.productId),
+                  quantity: state.quantity,
+                  lot_number: state.lotNumber,
+                  expiration_date: state.expirationDate.format('YYYY-MM-DD'),
+                  unit_price: String(state.unitPrice)
+                };
+                invalid = Object.values(body).some(function (v) {
+                  return v === '';
+                });
 
-              case 1:
+                if (!invalid) {
+                  _context2.next = 6;
+                  break;
+                }
+
+                this.setState({
+                  validationError: true
+                });
+                return _context2.abrupt("return");
+
+              case 6:
+                _context2.next = 8;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/api/productbundles', body);
+
+              case 8:
+                res = _context2.sent;
+
+                if (!(res.data && res.data.data)) {
+                  _context2.next = 13;
+                  break;
+                }
+
+                this.setState({
+                  success: true
+                });
+                _context2.next = 16;
+                break;
+
+              case 13:
+                this.setState({
+                  error: true
+                });
+                console.error(res);
+                return _context2.abrupt("return");
+
+              case 16:
               case "end":
                 return _context2.stop();
             }
@@ -100190,7 +100439,10 @@ function (_React$Component) {
         value: state.quantity,
         onChange: this.handleChange,
         type: "number",
-        margin: "normal"
+        margin: "normal",
+        inputProps: {
+          min: 1
+        }
       }));
     }
   }, {
@@ -100232,12 +100484,15 @@ function (_React$Component) {
       var props = this.props,
           state = this.state;
       var classes = props.classes;
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_PriceField__WEBPACK_IMPORTED_MODULE_21__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_PriceField__WEBPACK_IMPORTED_MODULE_22__["default"], {
         label: "Valor Unitario",
         value: state.unitPrice,
+        required: true,
         onChange: this.handleChange,
         TextFieldProps: {
-          id: 'unit-price',
+          inputProps: {
+            id: 'unit-price'
+          },
           name: 'unitPrice'
         }
       });
@@ -100261,9 +100516,18 @@ function (_React$Component) {
         variant: "h6",
         color: "inherit",
         className: classes.title
-      }, "Add to Inventory"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_22__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      }, "Add to Inventory"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_23__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_14__["default"], {
         className: classes.paper
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      }, state.validationError && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Alert__WEBPACK_IMPORTED_MODULE_21__["default"], {
+        type: "error",
+        message: "Por favor rellene todos los campos"
+      }), state.error && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Alert__WEBPACK_IMPORTED_MODULE_21__["default"], {
+        type: "error",
+        message: "Error al guardar"
+      }), state.success && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Alert__WEBPACK_IMPORTED_MODULE_21__["default"], {
+        type: "success",
+        message: "Guardado exitoso"
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
         container: true,
         spacing: 4
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {

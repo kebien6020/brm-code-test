@@ -17,7 +17,8 @@ function NumberFormatCustom(props) {
         if (!onChange) return
         onChange({
           target: {
-            value: values.value,
+            value: Math.abs(values.value),
+            name: props.name,
           },
         });
       }}

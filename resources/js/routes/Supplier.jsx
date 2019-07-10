@@ -21,6 +21,7 @@ import Typography from '@material-ui/core/Typography'
 import BackIcon from '@material-ui/icons/ArrowBack'
 
 import AdapterLink from '../components/AdapterLink'
+import Alert from '../components/Alert'
 import PriceField from '../components/PriceField'
 import ResponsiveContainer from '../components/ResponsiveContainer'
 
@@ -32,9 +33,14 @@ class Supplier extends React.Component {
       products: null,
 
       productId: -1,
-      quantity: '0',
+      quantity: '1',
       lotNumber: '',
       expirationDate: moment().startOf('day'),
+      unitPrice: '',
+
+      error: false,
+      validationError: false,
+      success: false,
     }
 
     // Bind this for non-react methods
@@ -61,6 +67,7 @@ class Supplier extends React.Component {
   }
 
   handleChange(event) {
+    this.setState({error: false, success: false, validationError: false})
     const { name, value } = event.target
     this.setState({
       [name]: value,
@@ -68,13 +75,37 @@ class Supplier extends React.Component {
   }
 
   handleDateChange(date) {
+    this.setState({error: false, success: false, validationError: false})
     this.setState({expirationDate: date})
   }
 
   async handleSubmit() {
     const { state } = this
 
-    // TODO: handle submit
+    const body = {
+      product_id: String(state.productId),
+      quantity: state.quantity,
+      lot_number: state.lotNumber,
+      expiration_date: state.expirationDate.format('YYYY-MM-DD'),
+      unit_price: String(state.unitPrice),
+    }
+
+    const invalid = Object.values(body).some(v => v === '')
+
+    if (invalid) {
+      this.setState({validationError: true})
+      return
+    }
+
+    const res = await axios.post('/api/productbundles', body)
+
+    if (res.data && res.data.data) {
+      this.setState({success: true})
+    } else {
+      this.setState({error: true})
+      console.error(res)
+      return
+    }
   }
 
   renderProducts(products) {
@@ -121,6 +152,7 @@ class Supplier extends React.Component {
           onChange={this.handleChange}
           type='number'
           margin="normal"
+          inputProps={{min: 1}}
         />
       </FormControl>
     )
@@ -169,9 +201,12 @@ class Supplier extends React.Component {
       <PriceField
         label='Valor Unitario'
         value={state.unitPrice}
+        required
         onChange={this.handleChange}
         TextFieldProps={{
-          id: 'unit-price',
+          inputProps: {
+            id: 'unit-price',
+          },
           name: 'unitPrice',
         }}
       />
@@ -202,6 +237,15 @@ class Supplier extends React.Component {
         </AppBar>
         <ResponsiveContainer>
           <Paper className={classes.paper}>
+            {state.validationError &&
+              <Alert type='error' message='Por favor rellene todos los campos' />
+            }
+            {state.error &&
+              <Alert type='error' message='Error al guardar' />
+            }
+            {state.success &&
+              <Alert type='success' message='Guardado exitoso' />
+            }
             <Grid container spacing={4}>
               <Grid item xs={12}>
                 {this.renderProductSelect()}
