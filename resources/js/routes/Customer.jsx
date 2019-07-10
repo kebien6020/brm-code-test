@@ -40,6 +40,17 @@ class Customer extends React.Component {
                 See my orders
               </Button>
             </Grid>
+            <Grid item xs={12} className={classes.buttonBack}>
+              <Button
+                component={AdapterLink}
+                to='/'
+                variant='outlined'
+                color='primary'
+                className={classes.button}
+              >
+                Go back
+              </Button>
+            </Grid>
           </Grid>
         </Paper>
       </ResponsiveContainer>
@@ -62,7 +73,13 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '80%',
+    height: '50%',
+  },
+  buttonBack: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '10%',
   },
   button: {
     minWidth: '90%',

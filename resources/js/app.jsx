@@ -11,6 +11,7 @@ import MomentUtils from '@date-io/moment'
 import Home from './routes/Home'
 import Supplier from './routes/Supplier'
 import Customer from './routes/Customer'
+import Buy from './routes/Buy'
 
 class App extends React.Component {
   render() {
@@ -23,6 +24,7 @@ class App extends React.Component {
               <Route exact path='/' component={Home} />
               <Route exact path='/supplier' component={Supplier} />
               <Route exact path='/customer' component={Customer} />
+              <Route exact path='/customer/buy' component={Buy} />
             </Switch>
           </MuiThemeProvider>
         </BrowserRouter>
