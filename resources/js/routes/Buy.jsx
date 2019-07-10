@@ -170,6 +170,9 @@ class Buy extends React.Component {
               inputProps={{min: 0, max: state.selectedBundle.quantity}}
             />
           </FormControl>
+          <Typography variant='h6' color='inherit' className={classes.totalPrice}>
+            Total Price: {money(state.quantity * state.selectedBundle.unit_price)}
+          </Typography>
         </DialogContent>
         <DialogActions>
           <Button onClick={this.handleCloseDialog} color="primary">

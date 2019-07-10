@@ -100308,7 +100308,11 @@ function (_React$Component) {
           min: 0,
           max: state.selectedBundle.quantity
         }
-      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_17__["default"], {
+        variant: "h6",
+        color: "inherit",
+        className: classes.totalPrice
+      }, "Total Price: ", Object(_utils__WEBPACK_IMPORTED_MODULE_22__["money"])(state.quantity * state.selectedBundle.unit_price))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
         onClick: this.handleCloseDialog,
         color: "primary"
       }, "Close"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
