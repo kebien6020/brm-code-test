@@ -12,6 +12,7 @@ import Home from './routes/Home'
 import Supplier from './routes/Supplier'
 import Customer from './routes/Customer'
 import Buy from './routes/Buy'
+import Orders from './routes/Orders'
 
 class App extends React.Component {
   render() {
@@ -25,6 +26,7 @@ class App extends React.Component {
               <Route exact path='/supplier' component={Supplier} />
               <Route exact path='/customer' component={Customer} />
               <Route exact path='/customer/buy' component={Buy} />
+              <Route exact path='/customer/orders' component={Orders} />
             </Switch>
           </MuiThemeProvider>
         </BrowserRouter>

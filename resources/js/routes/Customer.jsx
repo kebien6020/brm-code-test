@@ -36,7 +36,13 @@ class Customer extends React.Component {
               </Button>
             </Grid>
             <Grid item xs={6} className={classes.buttonContainer}>
-              <Button variant='contained' color='primary' className={classes.button}>
+              <Button
+                component={AdapterLink}
+                to='/customer/orders'
+                variant='contained'
+                color='primary'
+                className={classes.button}
+              >
                 See my orders
               </Button>
             </Grid>
