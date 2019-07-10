@@ -11,6 +11,6 @@ class Order extends Model
 
     public function bundle()
     {
-      return $this->belongsTo(ProductBundle::class);
+      return $this->belongsTo(ProductBundle::class, 'product_bundle_id', 'id');
     }
 }
