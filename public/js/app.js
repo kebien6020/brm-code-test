@@ -100181,6 +100181,12 @@ function (_React$Component) {
   }, {
     key: "handleOpenDialog",
     value: function handleOpenDialog(bund) {
+      if (state.quantity > bund.quantity) {
+        this.setState({
+          quantity: bund.quantity
+        });
+      }
+
       this.setState({
         selectedBundle: bund
       });
@@ -100205,7 +100211,7 @@ function (_React$Component) {
               case 0:
                 state = this.state;
                 bundle = state.selectedBundle;
-                newQty = bundle.quantity - state.quantity;
+                newQty = Math.max(bundle.quantity - state.quantity, 0);
                 changes = {
                   quantity: newQty
                 };

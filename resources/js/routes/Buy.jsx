@@ -78,6 +78,9 @@ class Buy extends React.Component {
   }
 
   handleOpenDialog(bund) {
+    if (state.quantity > bund.quantity) {
+      this.setState({quantity: bund.quantity})
+    }
     this.setState({selectedBundle: bund})
   }
 
@@ -90,7 +93,7 @@ class Buy extends React.Component {
 
     const bundle = state.selectedBundle
 
-    const newQty = bundle.quantity - state.quantity
+    const newQty = Math.max(bundle.quantity - state.quantity, 0)
     const changes = {quantity: newQty}
 
     this.setState({selectedBundle: null})
