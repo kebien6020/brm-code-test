@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\ProductBundleResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class OrderResource extends JsonResource
@@ -16,9 +17,10 @@ class OrderResource extends JsonResource
     {
         return [
           'id' => $this->id,
-          'bundle' => $this->bundle,
+          'bundle' => new ProductBundleResource($this->bundle),
           'product_bundle_id' => $this->product_bundle_id,
           'quantity' => $this->quantity,
+          'created_at' => $this->created_at,
         ];
     }
 }

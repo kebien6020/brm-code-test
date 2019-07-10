@@ -101,12 +101,13 @@ class Buy extends React.Component {
     this.setState({selectedBundle: null})
 
     let errorFlag = false
+    let res = null, res2 = null
     try {
       // Update the bundle
-      const res = await axios.patch('/api/productbundles/' + bundle.id, changes)
+      res = await axios.patch('/api/productbundles/' + bundle.id, changes)
 
       // Create a new order
-      const res2 = await axios.post('/api/orders', {
+      res2 = await axios.post('/api/orders', {
         product_bundle_id: bundle.id,
         quantity: orderQty,
       })
@@ -119,7 +120,7 @@ class Buy extends React.Component {
       this.updateBundles()
     } else {
       this.setState({error: true})
-      console.error(res)
+      console.error({res, res2})
       return
     }
   }

@@ -100210,8 +100210,7 @@ function (_React$Component) {
       var _handleBuy = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var state, bundle, orderQty, newQty, changes, errorFlag, _res, _res2;
-
+        var state, bundle, orderQty, newQty, changes, errorFlag, res, res2;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -100229,31 +100228,32 @@ function (_React$Component) {
                   selectedBundle: null
                 });
                 errorFlag = false;
-                _context2.prev = 7;
-                _context2.next = 10;
+                res = null, res2 = null;
+                _context2.prev = 8;
+                _context2.next = 11;
                 return axios__WEBPACK_IMPORTED_MODULE_2___default.a.patch('/api/productbundles/' + bundle.id, changes);
 
-              case 10:
-                _res = _context2.sent;
-                _context2.next = 13;
+              case 11:
+                res = _context2.sent;
+                _context2.next = 14;
                 return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/orders', {
                   product_bundle_id: bundle.id,
                   quantity: orderQty
                 });
 
-              case 13:
-                _res2 = _context2.sent;
-                _context2.next = 19;
+              case 14:
+                res2 = _context2.sent;
+                _context2.next = 20;
                 break;
 
-              case 16:
-                _context2.prev = 16;
-                _context2.t0 = _context2["catch"](7);
+              case 17:
+                _context2.prev = 17;
+                _context2.t0 = _context2["catch"](8);
                 errorFlag = true;
 
-              case 19:
+              case 20:
                 if (!(!errorFlag && res.data && res.data.data && res2.data && res2.data.data)) {
-                  _context2.next = 24;
+                  _context2.next = 25;
                   break;
                 }
 
@@ -100261,22 +100261,25 @@ function (_React$Component) {
                   success: true
                 });
                 this.updateBundles();
-                _context2.next = 27;
+                _context2.next = 28;
                 break;
 
-              case 24:
+              case 25:
                 this.setState({
                   error: true
                 });
-                console.error(res);
+                console.error({
+                  res: res,
+                  res2: res2
+                });
                 return _context2.abrupt("return");
 
-              case 27:
+              case 28:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this, [[7, 16]]);
+        }, _callee2, this, [[8, 17]]);
       }));
 
       function handleBuy() {
@@ -100726,16 +100729,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/index.js");
-/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/AppBar */ "./node_modules/@material-ui/core/esm/AppBar/index.js");
-/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/esm/IconButton/index.js");
-/* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Toolbar */ "./node_modules/@material-ui/core/esm/Toolbar/index.js");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
-/* harmony import */ var _material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/ArrowBack */ "./node_modules/@material-ui/icons/ArrowBack.js");
-/* harmony import */ var _material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_AdapterLink__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/AdapterLink */ "./resources/js/components/AdapterLink.jsx");
-/* harmony import */ var _components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/ResponsiveContainer */ "./resources/js/components/ResponsiveContainer.jsx");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils */ "./resources/js/utils.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/index.js");
+/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/AppBar */ "./node_modules/@material-ui/core/esm/AppBar/index.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Card */ "./node_modules/@material-ui/core/esm/Card/index.js");
+/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/CardContent */ "./node_modules/@material-ui/core/esm/CardContent/index.js");
+/* harmony import */ var _material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/CardActions */ "./node_modules/@material-ui/core/esm/CardActions/index.js");
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/esm/IconButton/index.js");
+/* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Toolbar */ "./node_modules/@material-ui/core/esm/Toolbar/index.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
+/* harmony import */ var _material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/ArrowBack */ "./node_modules/@material-ui/icons/ArrowBack.js");
+/* harmony import */ var _material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _components_AdapterLink__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/AdapterLink */ "./resources/js/components/AdapterLink.jsx");
+/* harmony import */ var _components_Alert__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/Alert */ "./resources/js/components/Alert.jsx");
+/* harmony import */ var _components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/ResponsiveContainer */ "./resources/js/components/ResponsiveContainer.jsx");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../utils */ "./resources/js/utils.js");
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -100752,13 +100764,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
 
 
 
@@ -100783,26 +100802,70 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Orders).call(this, props));
     _this.state = {
-      orders: null
+      orders: null,
+      success: false,
+      error: false // Bind this for non-react methods
+
     };
+    ['handleUndo', 'renderOrder', 'updateOrders'].forEach(function (func) {
+      _this[func] = _this[func].bind(_assertThisInitialized(_this));
+    });
     return _this;
   }
 
   _createClass(Orders, [{
-    key: "componentDidMount",
+    key: "updateOrders",
     value: function () {
-      var _componentDidMount = _asyncToGenerator(
+      var _updateOrders = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response, orders;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                _context.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/orders');
+
+              case 2:
+                response = _context.sent;
+                orders = response.data.data;
+                this.setState({
+                  orders: orders
+                });
+
+              case 5:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, this);
+      }));
+
+      function updateOrders() {
+        return _updateOrders.apply(this, arguments);
+      }
+
+      return updateOrders;
+    }()
+  }, {
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                this.updateOrders();
+
+              case 1:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
       }));
 
       function componentDidMount() {
@@ -100812,31 +100875,134 @@ function (_React$Component) {
       return componentDidMount;
     }()
   }, {
+    key: "handleUndo",
+    value: function () {
+      var _handleUndo = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(order) {
+        var bundleChange, errorFlag, res, res2;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                bundleChange = {
+                  quantity: Number(order.bundle.quantity) + Number(order.quantity)
+                };
+                errorFlag = false;
+                res = null, res2 = null;
+                _context3.prev = 3;
+                _context3.next = 6;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.patch('/api/productbundles/' + order.bundle.id, bundleChange);
+
+              case 6:
+                res = _context3.sent;
+                _context3.next = 9;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]('/api/orders/' + order.id);
+
+              case 9:
+                res2 = _context3.sent;
+                _context3.next = 15;
+                break;
+
+              case 12:
+                _context3.prev = 12;
+                _context3.t0 = _context3["catch"](3);
+                errorFlag = true;
+
+              case 15:
+                if (!(!errorFlag && res.data && res.data.data && res2.data)) {
+                  _context3.next = 20;
+                  break;
+                }
+
+                this.setState({
+                  success: true
+                });
+                this.updateOrders();
+                _context3.next = 23;
+                break;
+
+              case 20:
+                this.setState({
+                  error: true
+                });
+                console.error({
+                  res: res,
+                  res2: res2
+                });
+                return _context3.abrupt("return");
+
+              case 23:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this, [[3, 12]]);
+      }));
+
+      function handleUndo(_x) {
+        return _handleUndo.apply(this, arguments);
+      }
+
+      return handleUndo;
+    }()
+  }, {
+    key: "renderOrder",
+    value: function renderOrder(order, key) {
+      var _this2 = this;
+
+      var classes = this.props.classes;
+      var bull = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        className: classes.bullet
+      }, "\u2022");
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        key: key,
+        className: classes.card
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_8__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        variant: "h5"
+      }, "Ordered ", order.bundle.product.name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        variant: "body2"
+      }, "Quantity: ", order.quantity), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        variant: "body2"
+      }, "Ordered on: ", moment__WEBPACK_IMPORTED_MODULE_3___default()(order.created_at.date).format('DD/MMM/YYYY')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        variant: "body2",
+        gutterBottom: true
+      }, "Unit price: ", Object(_utils__WEBPACK_IMPORTED_MODULE_17__["money"])(order.bundle.unit_price)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        variant: "body2"
+      }, "Total amount: ", Object(_utils__WEBPACK_IMPORTED_MODULE_17__["money"])(order.bundle.unit_price * order.quantity))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_9__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        variant: "outlined",
+        color: "primary",
+        onClick: function onClick() {
+          return _this2.handleUndo(order);
+        }
+      }, "Undo")));
+    }
+  }, {
     key: "render",
     value: function render() {
       var props = this.props,
           state = this.state;
       var classes = props.classes;
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
         position: "static",
         className: classes.appbar
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_11__["default"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_10__["default"], {
         className: classes.backButton,
         color: "inherit",
         "aria-label": "Back",
-        component: _components_AdapterLink__WEBPACK_IMPORTED_MODULE_8__["default"],
+        component: _components_AdapterLink__WEBPACK_IMPORTED_MODULE_14__["default"],
         to: "/customer"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_7___default.a, null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_13___default.a, null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__["default"], {
         variant: "h6",
         color: "inherit",
         className: classes.title
-      }, "Orders"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_9__["default"], null, state.error && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Alert, {
+      }, "Orders"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_ResponsiveContainer__WEBPACK_IMPORTED_MODULE_16__["default"], null, state.error && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Alert__WEBPACK_IMPORTED_MODULE_15__["default"], {
         type: "error",
         message: "Error while saving"
-      }), state.success && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Alert, {
+      }), state.success && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Alert__WEBPACK_IMPORTED_MODULE_15__["default"], {
         type: "success",
         message: "Saved succesfully"
-      }), state.orders ? state.orders.map(this.renderOrder) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), state.orders ? state.orders.map(this.renderOrder) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__["default"], {
         variant: "h6"
       }, "Cargando\u2026")));
     }
@@ -100868,7 +101034,7 @@ var styles = function styles(theme) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(Orders));
+/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_styles__WEBPACK_IMPORTED_MODULE_4__["withStyles"])(styles)(Orders));
 
 /***/ }),
 
