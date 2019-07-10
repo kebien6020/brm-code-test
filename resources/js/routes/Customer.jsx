@@ -10,7 +10,7 @@ import ResponsiveContainer from '../components/ResponsiveContainer'
 
 import AdapterLink from '../components/AdapterLink'
 
-class Home extends React.Component {
+class Customer extends React.Component {
   render() {
     const { props } = this
     const { classes } = props
@@ -21,29 +21,23 @@ class Home extends React.Component {
           <Grid container style={{height: '100%'}}>
             <Grid item xs={12}>
               <Typography variant='h2' className={classes.title}>
-                I am a…
+                I want to…
               </Typography>
             </Grid>
             <Grid item xs={6} className={classes.buttonContainer}>
               <Button
                 component={AdapterLink}
-                to='/supplier'
+                to='/customer/buy'
                 variant='contained'
                 color='primary'
                 className={classes.button}
               >
-                Supplier
+                Buy
               </Button>
             </Grid>
             <Grid item xs={6} className={classes.buttonContainer}>
-              <Button
-                component={AdapterLink}
-                to='/customer'
-                variant='contained'
-                color='primary'
-                className={classes.button}
-              >
-                Customer
+              <Button variant='contained' color='primary' className={classes.button}>
+                See my orders
               </Button>
             </Grid>
           </Grid>
@@ -82,4 +76,4 @@ const styles = theme => ({
   },
 })
 
-export default withStyles(styles)(Home)
+export default withStyles(styles)(Customer)
