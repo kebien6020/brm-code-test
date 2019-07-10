@@ -100181,7 +100181,7 @@ function (_React$Component) {
   }, {
     key: "handleOpenDialog",
     value: function handleOpenDialog(bund) {
-      if (state.quantity > bund.quantity) {
+      if (this.state.quantity > bund.quantity) {
         this.setState({
           quantity: bund.quantity
         });
@@ -100204,28 +100204,50 @@ function (_React$Component) {
       var _handleBuy = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var state, bundle, newQty, changes, res;
+        var state, bundle, orderQty, newQty, changes, errorFlag, _res, _res2;
+
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                state = this.state;
+                state = this.state; // Gather some info
+
                 bundle = state.selectedBundle;
-                newQty = Math.max(bundle.quantity - state.quantity, 0);
+                orderQty = state.quantity;
+                newQty = Math.max(bundle.quantity - orderQty, 0);
                 changes = {
-                  quantity: newQty
+                  quantity: newQty // Close the dialog
+
                 };
                 this.setState({
                   selectedBundle: null
                 });
-                _context2.next = 7;
+                errorFlag = false;
+                _context2.prev = 7;
+                _context2.next = 10;
                 return axios__WEBPACK_IMPORTED_MODULE_2___default.a.patch('/api/productbundles/' + bundle.id, changes);
 
-              case 7:
-                res = _context2.sent;
+              case 10:
+                _res = _context2.sent;
+                _context2.next = 13;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/orders', {
+                  product_bundle_id: bundle.id,
+                  quantity: orderQty
+                });
 
-                if (!(res.data && res.data.data)) {
-                  _context2.next = 13;
+              case 13:
+                _res2 = _context2.sent;
+                _context2.next = 19;
+                break;
+
+              case 16:
+                _context2.prev = 16;
+                _context2.t0 = _context2["catch"](7);
+                errorFlag = true;
+
+              case 19:
+                if (!(!errorFlag && res.data && res.data.data && res2.data && res2.data.data)) {
+                  _context2.next = 24;
                   break;
                 }
 
@@ -100233,22 +100255,22 @@ function (_React$Component) {
                   success: true
                 });
                 this.updateBundles();
-                _context2.next = 16;
+                _context2.next = 27;
                 break;
 
-              case 13:
+              case 24:
                 this.setState({
                   error: true
                 });
                 console.error(res);
                 return _context2.abrupt("return");
 
-              case 16:
+              case 27:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee2, this, [[7, 16]]);
       }));
 
       function handleBuy() {
@@ -100341,7 +100363,7 @@ function (_React$Component) {
         color: "inherit",
         "aria-label": "Back",
         component: _components_AdapterLink__WEBPACK_IMPORTED_MODULE_19__["default"],
-        to: "/"
+        to: "/customer"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_ArrowBack__WEBPACK_IMPORTED_MODULE_18___default.a, null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_17__["default"], {
         variant: "h6",
         color: "inherit",

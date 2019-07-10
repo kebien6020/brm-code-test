@@ -78,7 +78,7 @@ class Buy extends React.Component {
   }
 
   handleOpenDialog(bund) {
-    if (state.quantity > bund.quantity) {
+    if (this.state.quantity > bund.quantity) {
       this.setState({quantity: bund.quantity})
     }
     this.setState({selectedBundle: bund})
@@ -91,16 +91,30 @@ class Buy extends React.Component {
   async handleBuy() {
     const { state } = this
 
+    // Gather some info
     const bundle = state.selectedBundle
-
-    const newQty = Math.max(bundle.quantity - state.quantity, 0)
+    const orderQty = state.quantity
+    const newQty = Math.max(bundle.quantity - orderQty, 0)
     const changes = {quantity: newQty}
 
+    // Close the dialog
     this.setState({selectedBundle: null})
 
-    const res = await axios.patch('/api/productbundles/' + bundle.id, changes)
+    let errorFlag = false
+    try {
+      // Update the bundle
+      const res = await axios.patch('/api/productbundles/' + bundle.id, changes)
 
-    if (res.data && res.data.data) {
+      // Create a new order
+      const res2 = await axios.post('/api/orders', {
+        product_bundle_id: bundle.id,
+        quantity: orderQty,
+      })
+    } catch (e) {
+      errorFlag = true
+    }
+
+    if (!errorFlag && res.data && res.data.data && res2.data && res2.data.data) {
       this.setState({success: true})
       this.updateBundles()
     } else {
@@ -203,7 +217,7 @@ class Buy extends React.Component {
               color='inherit'
               aria-label='Back'
               component={AdapterLink}
-              to='/'
+              to='/customer'
             >
               <BackIcon />
             </IconButton>
