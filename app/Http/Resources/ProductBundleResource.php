@@ -15,6 +15,7 @@ class ProductBundleResource extends JsonResource
     public function toArray($request)
     {
         return [
+          'id' => $this->id,
           'product' => $this->product,
           'quantity' => $this->quantity,
           'lot_number' => $this->lot_number,
