@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography'
 
 import ResponsiveContainer from '../components/ResponsiveContainer'
 
-const AdapterLink = React.forwardRef((props, ref) => <Link innerRef={ref} {...props} />)
+import AdapterLink from '../components/AdapterLink'
 
 class Home extends React.Component {
   render() {

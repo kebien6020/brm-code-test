@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { withStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import { MuiPickersUtilsProvider } from '@material-ui/pickers'
+import MomentUtils from '@date-io/moment'
 
 import Home from './routes/Home'
 import Supplier from './routes/Supplier'
@@ -12,15 +14,17 @@ import Supplier from './routes/Supplier'
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <MuiThemeProvider theme={createMuiTheme()}>
-          <CssBaseline />
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/supplier' component={Supplier} />
-          </Switch>
-        </MuiThemeProvider>
-      </BrowserRouter>
+      <MuiPickersUtilsProvider utils={MomentUtils}>
+        <BrowserRouter>
+          <MuiThemeProvider theme={createMuiTheme()}>
+            <CssBaseline />
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/supplier' component={Supplier} />
+            </Switch>
+          </MuiThemeProvider>
+        </BrowserRouter>
+      </MuiPickersUtilsProvider>
     )
   }
 }
