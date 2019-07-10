@@ -238,13 +238,13 @@ class Supplier extends React.Component {
         <ResponsiveContainer>
           <Paper className={classes.paper}>
             {state.validationError &&
-              <Alert type='error' message='Por favor rellene todos los campos' />
+              <Alert type='error' message='Please fill in all the fields' />
             }
             {state.error &&
-              <Alert type='error' message='Error al guardar' />
+              <Alert type='error' message='Error when saving' />
             }
             {state.success &&
-              <Alert type='success' message='Guardado exitoso' />
+              <Alert type='success' message='Saved succesfully' />
             }
             <Grid container spacing={4}>
               <Grid item xs={12}>

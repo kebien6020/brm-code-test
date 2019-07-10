@@ -228,10 +228,10 @@ class Buy extends React.Component {
         </AppBar>
         <ResponsiveContainer>
           {state.error &&
-            <Alert type='error' message='Error al guardar' />
+            <Alert type='error' message='Error when saving' />
           }
           {state.success &&
-            <Alert type='success' message='Guardado exitoso' />
+            <Alert type='success' message='Saved succesfully' />
           }
           {state.bundles ?
             state.bundles.filter(b => b.quantity > 0).map(this.renderProductBundle)
